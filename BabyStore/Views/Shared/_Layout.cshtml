@@ -17,14 +17,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("BabyStore", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Paco", "About", "Home")</li>
+                    <li>@Html.ActionLink("Comprar por categoria", "Index", "Categories")</li>
+                    <li>@Html.ActionLink("Ver todos nuestros productos", "Index", "Products")</li>
+
                 </ul>
             </div>
         </div>
@@ -33,7 +35,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - Aplicación BabyStore, práctica del libro <a href="https://www.apress.com/gp/book/9781484221365">ASP.NET MVC with Entity Framework and CSS</a>  programadas por Adrián Arabit Ferre </p>
         </footer>
     </div>
 
