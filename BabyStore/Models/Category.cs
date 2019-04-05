@@ -7,7 +7,7 @@ namespace BabyStore.Models
     {
 
         public int ID { get; set; }
-        [Display(Name = "Category Name")]
+        [Display(Name = "Nombre de Categoria")]
         public string Name { get; set; }
         public virtual ICollection<Product> Products { get; set; }
 

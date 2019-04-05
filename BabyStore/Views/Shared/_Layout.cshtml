@@ -3,6 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
+    <meta description="@ViewBag.MetaDescription  Esta es la descripción genérica de la página, se puede añadir información previa
+          con el ViewBag.Metadescription" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
@@ -22,12 +24,22 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Comprar por categoria", "Index", "Categories")</li>
                     <li>@Html.ActionLink("Ver todos nuestros productos", "Index", "Products")</li>
-
                 </ul>
+                <!--COMIENZA LA BARRA DE BÚSQUEDA-->
+                @using (Html.BeginForm("Index", "Products", FormMethod.Get, new
+                {
+                    @class = "navbar-form navbar-left"
+                }))
+                {
+                    <div class="form-group">
+                        @Html.TextBox("Search", null, new { @class = "form-control", @placeholder = "Búsqueda de productos"})
+                    </div>
+                    <button type="submit" class="btn btn-default">Enviar</button>
+                }
+                
+                <!--FINALIZA LA BARRA DE BÚSQUEDA-->
             </div>
         </div>
     </div>
